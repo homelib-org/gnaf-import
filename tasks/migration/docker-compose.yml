@@ -1,11 +1,33 @@
 version: '3'
 services:
-  pg:
+  db:
     image: postgres:12.4-alpine
     environment:
       POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./2021-08/data:/tmp/data
     networks:
       - default
+  migrate:
+    image: flyway/flyway
+    command: -url=jdbc:postgresql://db:5432/postgres -user=postgres -password=postgres -connectRetries=60 migrate
+    volumes:
+      - ./2021-08/sql:/flyway/sql
+    networks:
+      - default
+    depends_on:
+      - db
+  admin:
+    image: sosedoff/pgweb
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/postgres?sslmode=disable
+    ports:
+      - 5433:8081
+    networks:
+      - default
+    depends_on:
+      - db
+      - migrate
 networks:
   default:
 
