@@ -2,6 +2,7 @@ version: '3'
 services:
   db:
     image: postgres:12.4-alpine
+    shm_size: 1g
     environment:
       POSTGRES_PASSWORD: postgres
     volumes:
