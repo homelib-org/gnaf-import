@@ -1,12 +1,14 @@
-version: '3'
+version: "3"
 services:
   db:
-    image: postgres:12.4-alpine
+    build:
+      context: .
+      dockerfile: db.Dockerfile
     shm_size: 1g
     environment:
       POSTGRES_PASSWORD: postgres
-    volumes:
-      - ./data:/tmp/data
+    ports:
+      - 5432:5432
     networks:
       - default
   migrate:
@@ -31,4 +33,3 @@ services:
       - migrate
 networks:
   default:
-
