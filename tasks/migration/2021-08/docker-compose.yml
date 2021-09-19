@@ -6,14 +6,14 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
     volumes:
-      - ./2021-08/data:/tmp/data
+      - ./data:/tmp/data
     networks:
       - default
   migrate:
     image: flyway/flyway
     command: -url=jdbc:postgresql://db:5432/postgres -user=postgres -password=postgres -connectRetries=60 migrate
     volumes:
-      - ./2021-08/sql:/flyway/sql
+      - ./sql:/flyway/sql
     networks:
       - default
     depends_on:
