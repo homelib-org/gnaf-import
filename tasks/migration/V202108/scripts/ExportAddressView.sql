@@ -1,0 +1,1 @@
+\COPY (SELECT * FROM public.address_view WHERE STATE_ABBREVIATION = 'VIC') TO '/tmp/export/address_view.csv' DELIMITER ',' CSV HEADER;

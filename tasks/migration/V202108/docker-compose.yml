@@ -13,13 +13,13 @@ services:
       - default
   migrate:
     image: flyway/flyway
-    command: -url=jdbc:postgresql://db:5432/postgres -user=postgres -password=postgres -connectRetries=60 migrate
     volumes:
       - ./sql:/flyway/sql
     networks:
       - default
     depends_on:
       - db
+    command: -url=jdbc:postgresql://db:5432/postgres -user=postgres -password=postgres -connectRetries=60 migrate
   admin:
     image: sosedoff/pgweb
     environment:
@@ -31,5 +31,17 @@ services:
     depends_on:
       - db
       - migrate
+  psql:
+    image: postgres:12.4
+    volumes:
+      - ./export:/tmp/export
+    ports:
+      - 5433:8081
+    networks:
+      - default
+    depends_on:
+      - db
+      - migrate
+    command: psql postgres://postgres:postgres@db:5432/postgres?sslmode=disable
 networks:
   default:
