@@ -35,8 +35,6 @@ services:
     image: postgres:12.4
     volumes:
       - ./export:/tmp/export
-    ports:
-      - 5433:8081
     networks:
       - default
     depends_on:
