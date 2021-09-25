@@ -14,7 +14,7 @@ services:
   migrate:
     image: flyway/flyway
     volumes:
-      - ./sql:/flyway/sql
+      - ./migrations:/flyway/sql
     networks:
       - default
     depends_on:
