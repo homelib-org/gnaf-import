@@ -10,11 +10,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: migrate
         run: |
-          docker-compose -f tasks/ci/docker-compose.yml build migrate
-          docker-compose -f tasks/ci/docker-compose.yml run migrate
-          docker-compose -f tasks/ci/docker-compose.yml down
+          docker-compose -f tasks/V202108/docker-compose.yml build migrate
+          docker-compose -f tasks/V202108/docker-compose.yml run migrate
+          docker-compose -f tasks/V202108/docker-compose.yml down
       - name: export
         run: |
-          docker-compose -f tasks/ci/docker-compose.yml build export
-          docker-compose -f tasks/ci/docker-compose.yml run export
-          docker-compose -f tasks/ci/docker-compose.yml down
+          docker-compose -f tasks/V202108/docker-compose.yml build export
+          docker-compose -f tasks/V202108/docker-compose.yml run export
+          docker-compose -f tasks/V202108/docker-compose.yml down

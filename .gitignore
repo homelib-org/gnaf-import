@@ -1,2 +1,1 @@
-tasks/migration/**/data
-tasks/migration/**/export
+tasks/**/export
