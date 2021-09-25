@@ -1,0 +1,20 @@
+name: pipeline
+on:
+  push:
+    branches:
+      - master
+jobs:
+  V202108:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: migrate
+        run: |
+          docker-compose -f tasks/ci/docker-compose.yml build migrate
+          docker-compose -f tasks/ci/docker-compose.yml run migrate
+          docker-compose -f tasks/ci/docker-compose.yml down
+      - name: export
+        run: |
+          docker-compose -f tasks/ci/docker-compose.yml build export
+          docker-compose -f tasks/ci/docker-compose.yml run export
+          docker-compose -f tasks/ci/docker-compose.yml down
