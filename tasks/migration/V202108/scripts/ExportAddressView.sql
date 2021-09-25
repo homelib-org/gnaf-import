@@ -1,1 +1,9 @@
-\COPY (SELECT * FROM public.address_view WHERE STATE_ABBREVIATION = 'VIC') TO '/tmp/export/address_view.csv' DELIMITER ',' CSV HEADER;
+\COPY (SELECT * FROM public.address_view WHERE STATE_ABBREVIATION = 'VIC') TO '/tmp/export/address_view_vic.csv' DELIMITER ',' CSV HEADER;
+\COPY (SELECT * FROM public.address_view WHERE STATE_ABBREVIATION = 'NSW') TO '/tmp/export/address_view_nsw.csv' DELIMITER ',' CSV HEADER;
+\COPY (SELECT * FROM public.address_view WHERE STATE_ABBREVIATION = 'QLD') TO '/tmp/export/address_view_qld.csv' DELIMITER ',' CSV HEADER;
+\COPY (SELECT * FROM public.address_view WHERE STATE_ABBREVIATION = 'SA') TO '/tmp/export/address_view_sa.csv' DELIMITER ',' CSV HEADER;
+\COPY (SELECT * FROM public.address_view WHERE STATE_ABBREVIATION = 'WA') TO '/tmp/export/address_view_wa.csv' DELIMITER ',' CSV HEADER;
+\COPY (SELECT * FROM public.address_view WHERE STATE_ABBREVIATION = 'TAS') TO '/tmp/export/address_view_tas.csv' DELIMITER ',' CSV HEADER;
+\COPY (SELECT * FROM public.address_view WHERE STATE_ABBREVIATION = 'ACT') TO '/tmp/export/address_view_act.csv' DELIMITER ',' CSV HEADER;
+\COPY (SELECT * FROM public.address_view WHERE STATE_ABBREVIATION = 'NT') TO '/tmp/export/address_view_nt.csv' DELIMITER ',' CSV HEADER;
+\COPY (SELECT * FROM public.address_view WHERE STATE_ABBREVIATION = 'OT') TO '/tmp/export/address_view_ot.csv' DELIMITER ',' CSV HEADER;

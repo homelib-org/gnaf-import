@@ -31,15 +31,16 @@ services:
     depends_on:
       - db
       - migrate
-  psql:
+  export:
     image: postgres:12.4
     volumes:
       - ./export:/tmp/export
+      - ./scripts:/tmp/scripts
     networks:
       - default
     depends_on:
       - db
       - migrate
-    command: psql postgres://postgres:postgres@db:5432/postgres?sslmode=disable
+    command: psql postgres://postgres:postgres@db:5432/postgres?sslmode=disable -f /tmp/scripts/ExportAddressView.sql
 networks:
   default:
