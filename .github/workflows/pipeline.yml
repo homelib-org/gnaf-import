@@ -13,8 +13,3 @@ jobs:
           docker-compose -f tasks/V202108/docker-compose.yml build migrate
           docker-compose -f tasks/V202108/docker-compose.yml run migrate
           docker-compose -f tasks/V202108/docker-compose.yml down
-      - name: export
-        run: |
-          docker-compose -f tasks/V202108/docker-compose.yml build export
-          docker-compose -f tasks/V202108/docker-compose.yml run export
-          docker-compose -f tasks/V202108/docker-compose.yml down
