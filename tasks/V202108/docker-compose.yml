@@ -35,12 +35,12 @@ services:
     image: postgres:12.4
     volumes:
       - ./export:/tmp/export
-      - ./scripts:/tmp/scripts
+      - ./sql:/tmp/sql
     networks:
       - default
     depends_on:
       - db
       - migrate
-    command: psql postgres://postgres:postgres@db:5432/postgres?sslmode=disable -f /tmp/scripts/ExportAddressView.sql
+    command: sh -c 'sleep 10 && psql postgres://postgres:postgres@db:5432/postgres?sslmode=disable -f /tmp/sql/ExportAddressView.sql'
 networks:
   default:
