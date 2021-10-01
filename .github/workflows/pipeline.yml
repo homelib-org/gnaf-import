@@ -16,3 +16,8 @@ jobs:
         run: |
           docker-compose -f tasks/V202108/docker-compose.yml build export
           docker-compose -f tasks/V202108/docker-compose.yml run export
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: V202108_${{ github.sha }}
+          path: tasks/V202108/export
