@@ -21,11 +21,3 @@ jobs:
         with:
           name: V202108_${{ github.sha }}
           path: tasks/V202108/export
-      - name: release
-        uses: softprops/action-gh-release@v1
-        with:
-          name: V202108_${{ github.sha }}
-          files: |
-            tasks/V202108/export/**/*
-
-
