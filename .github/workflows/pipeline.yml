@@ -19,15 +19,5 @@ jobs:
       - name: upload
         uses: actions/upload-artifact@v2
         with:
-          name: V202108_address_view
+          name: V202108_${{ github.sha }}
           path: tasks/V202108/export
-      - name: upload_sa
-        uses: actions/upload-artifact@v2
-        with:
-          name: V202108_address_view_sa.csv
-          path: tasks/V202108/export/address_view_sa.csv
-      - name: upload_vic
-        uses: actions/upload-artifact@v2
-        with:
-          name: V202108_address_view_vic.csv
-          path: tasks/V202108/export/address_view_vic.csv
