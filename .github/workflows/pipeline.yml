@@ -19,5 +19,5 @@ jobs:
       - name: upload
         uses: actions/upload-artifact@v2
         with:
-          name: V202108_${{ github.sha }}
-          path: tasks/V202108/export
+          name: V202108_address_view
+          path: tasks/V202108/export/address_view.csv
