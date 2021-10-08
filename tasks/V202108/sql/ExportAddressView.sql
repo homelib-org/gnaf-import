@@ -7,3 +7,4 @@
 \COPY (SELECT * FROM public.address_view WHERE STATE_ABBREVIATION = 'ACT') TO '/tmp/export/address_view_act.csv' DELIMITER ',' CSV HEADER;
 \COPY (SELECT * FROM public.address_view WHERE STATE_ABBREVIATION = 'NT') TO '/tmp/export/address_view_nt.csv' DELIMITER ',' CSV HEADER;
 \COPY (SELECT * FROM public.address_view WHERE STATE_ABBREVIATION = 'OT') TO '/tmp/export/address_view_ot.csv' DELIMITER ',' CSV HEADER;
+\COPY (SELECT * FROM public.address_view) TO '/tmp/export/address_view.csv' DELIMITER ',' CSV HEADER;
