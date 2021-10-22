@@ -21,3 +21,48 @@ jobs:
         with:
           name: V202108_address_view
           path: tasks/V202108/export/address_view.csv
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: V202108_address_view_vic
+          path: tasks/V202108/export/address_view_vic.csv
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: V202108_address_view_nsw
+          path: tasks/V202108/export/address_view_nsw.csv
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: V202108_address_view_qld
+          path: tasks/V202108/export/address_view_qld.csv
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: V202108_address_view_sa
+          path: tasks/V202108/export/address_view_sa.csv
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: V202108_address_view_wa
+          path: tasks/V202108/export/address_view_wa.csv
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: V202108_address_view_tas
+          path: tasks/V202108/export/address_view_tas.csv
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: V202108_address_view_act
+          path: tasks/V202108/export/address_view_act.csv
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: V202108_address_view_nt
+          path: tasks/V202108/export/address_view_nt.csv
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: V202108_address_view_ot
+          path: tasks/V202108/export/address_view_ot.csv
