@@ -1,0 +1,16 @@
+{
+  "name": "gnaf-import",
+  "version": "0.0.0",
+  "repository": "https://github.com/tsukiy0-org/gnaf-import.git",
+  "author": "tsukiy0 <tsukiy0@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "version:prerelease": "standard-version --prerelease alpha",
+    "version:prerelease:dry": "yarn version:prerelease --dry-run",
+    "version:release": "standard-version",
+    "version:release:dry": "standard-version --dry-run"
+  },
+  "devDependencies": {
+    "standard-version": "^9.3.2"
+  }
+}
