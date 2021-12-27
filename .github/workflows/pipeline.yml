@@ -4,79 +4,29 @@ on:
     branches:
       - master
 jobs:
-  V202108:
+  V202111:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: migrate
         run: |
-          docker-compose -f tasks/V202108/docker-compose.yml build migrate
-          docker-compose -f tasks/V202108/docker-compose.yml run migrate
+          docker-compose -f tasks/V202111/docker-compose.yml build migrate
+          docker-compose -f tasks/V202111/docker-compose.yml run migrate
       - name: export
         run: |
-          docker-compose -f tasks/V202108/docker-compose.yml build export
-          docker-compose -f tasks/V202108/docker-compose.yml run export
+          docker-compose -f tasks/V202111/docker-compose.yml build export
+          docker-compose -f tasks/V202111/docker-compose.yml run export
       - name: release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            tasks/V202108/export/address_view_vic.csv
-            tasks/V202108/export/address_view_nsw.csv
-            tasks/V202108/export/address_view_qld.csv
-            tasks/V202108/export/address_view_sa.csv
-            tasks/V202108/export/address_view_wa.csv
-            tasks/V202108/export/address_view_tas.csv
-            tasks/V202108/export/address_view_nt.csv
-            tasks/V202108/export/address_view_ot.csv
-            tasks/V202108/export/address_view_ot.csv
-      - name: upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: V202108_address_view
-          path: tasks/V202108/export/address_view.csv
-      - name: upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: V202108_address_view_vic
-          path: tasks/V202108/export/address_view_vic.csv
-      - name: upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: V202108_address_view_nsw
-          path: tasks/V202108/export/address_view_nsw.csv
-      - name: upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: V202108_address_view_qld
-          path: tasks/V202108/export/address_view_qld.csv
-      - name: upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: V202108_address_view_sa
-          path: tasks/V202108/export/address_view_sa.csv
-      - name: upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: V202108_address_view_wa
-          path: tasks/V202108/export/address_view_wa.csv
-      - name: upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: V202108_address_view_tas
-          path: tasks/V202108/export/address_view_tas.csv
-      - name: upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: V202108_address_view_act
-          path: tasks/V202108/export/address_view_act.csv
-      - name: upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: V202108_address_view_nt
-          path: tasks/V202108/export/address_view_nt.csv
-      - name: upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: V202108_address_view_ot
-          path: tasks/V202108/export/address_view_ot.csv
+            tasks/V202111/export/address_view_vic.csv
+            tasks/V202111/export/address_view_nsw.csv
+            tasks/V202111/export/address_view_qld.csv
+            tasks/V202111/export/address_view_sa.csv
+            tasks/V202111/export/address_view_wa.csv
+            tasks/V202111/export/address_view_tas.csv
+            tasks/V202111/export/address_view_nt.csv
+            tasks/V202111/export/address_view_ot.csv
+            tasks/V202111/export/address_view_ot.csv
