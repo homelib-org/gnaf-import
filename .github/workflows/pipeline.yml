@@ -1,8 +1,7 @@
 name: pipeline
 on:
   push:
-    branches:
-      - master
+
 jobs:
   V202111:
     runs-on: ubuntu-latest
