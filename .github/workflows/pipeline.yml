@@ -26,6 +26,6 @@ jobs:
             tasks/V202111/export/address_view_sa.csv
             tasks/V202111/export/address_view_wa.csv
             tasks/V202111/export/address_view_tas.csv
+            tasks/V202111/export/address_view_act.csv
             tasks/V202111/export/address_view_nt.csv
-            tasks/V202111/export/address_view_ot.csv
             tasks/V202111/export/address_view_ot.csv
