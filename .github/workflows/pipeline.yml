@@ -16,6 +16,19 @@ jobs:
         run: |
           docker-compose -f tasks/V202108/docker-compose.yml build export
           docker-compose -f tasks/V202108/docker-compose.yml run export
+      - name: release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            tasks/V202108/export/address_view_vic.csv
+            tasks/V202108/export/address_view_nsw.csv
+            tasks/V202108/export/address_view_qld.csv
+            tasks/V202108/export/address_view_sa.csv
+            tasks/V202108/export/address_view_wa.csv
+            tasks/V202108/export/address_view_tas.csv
+            tasks/V202108/export/address_view_nt.csv
+            tasks/V202108/export/address_view_ot.csv
+            tasks/V202108/export/address_view_ot.csv
       - name: upload
         uses: actions/upload-artifact@v2
         with:
