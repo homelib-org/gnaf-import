@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.4](https://github.com/tsukiy0-org/gnaf-import/compare/v0.0.1-alpha.3...v0.0.1-alpha.4) (2022-01-03)
+
+
+### Bug Fixes
+
+* do not export >2gb (gh release limitation) ([6ae02af](https://github.com/tsukiy0-org/gnaf-import/commit/6ae02af38f388daa1142d1ddad5e38239785ef1d))
+
 ### [0.0.1-alpha.3](https://github.com/tsukiy0-org/gnaf-import/compare/v0.0.1-alpha.2...v0.0.1-alpha.3) (2022-01-03)
 
 ### [0.0.1-alpha.2](https://github.com/tsukiy0-org/gnaf-import/compare/v0.0.1-alpha.1...v0.0.1-alpha.2) (2021-12-27)
