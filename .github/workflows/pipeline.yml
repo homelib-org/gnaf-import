@@ -15,6 +15,11 @@ jobs:
         run: |
           docker-compose -f tasks/V202111/docker-compose.yml build export
           docker-compose -f tasks/V202111/docker-compose.yml run export
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: V202111_address_view
+          path: tasks/V202111/export/address_view.csv
       - name: release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
